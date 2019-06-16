@@ -1,0 +1,38 @@
+body{
+    background-image: url(../images/background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Lalezar', cursive;
+    text-align: center;
+    font-size: 24px;
+    color: #1c143d;
+    
+
+}
+
+#main{
+    background-color: rgba(146, 159, 181, 0.61);
+    border-style: ridge;
+    border-color: black;
+    border-width: 1px;
+    border-radius: 25px;
+    height: 620px;
+    padding:20px;
+    margin-bottom: 100px;
+    
+}
+
+a{
+    color: grey;
+}
+
+#footer{
+    font-size: 13px;
+    background-color: rgba(29, 23, 53, 0.84);
+}
+
+.pick-answer{
+    padding: 10px;
+    margin: 20px;
+}
