@@ -1,3 +1,5 @@
+*{box-sizing: border-box;}
+
 body{
     background-image: url(../images/background.jpg);
     background-repeat: no-repeat;
@@ -9,6 +11,10 @@ body{
     color: #1c143d;
     
 
+}
+
+img{
+    width:85%;
 }
 
 #main{
