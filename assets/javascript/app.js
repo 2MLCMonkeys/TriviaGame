@@ -137,7 +137,7 @@ $("#start").on("click", function () {
 //timer
 function countDown() {
     //set timer 
-    timer = 20;
+    timer = 15;
     //in not running set to true, clear the interval and start decrement function
     if (!running) {
         clearInterval(intervalId);
@@ -153,9 +153,11 @@ function decrement() {
     $("#timer").html(`Time Left: ${timer}`); {
         // if time runs out, run stop function, show in html time ran out and add score to out of time
         if (timer === 0) {
-            stop();
-            $("#question").fadeToggle("slow", timedOut);
-            endTime++;
+                stop();
+                endTime++;
+                clean();
+                timedOut();
+                console.log("out of time!");
         }
     };
 
@@ -166,12 +168,15 @@ function stop() {
     clearInterval(intervalId);
 };
 
+
+//fix this
+
 function timedOut() {
     clean();
     var timerH = $("#timer");
     timerH.text("Out of Time, Genius!");
-    var questionsD = $("#question");
-    questionsD.text(`<p>The correct answer was ${questions[index].choices[questions[index].answer.indexOf(true)]}</p>`);
+    var questionsD = $("#answer");
+    questionsD.text(`The correct answer was ${questions[index].choices[questions[index].answer.indexOf(true)]}`);
 
     if (index === (questions.length - 1)) {
         console.log("Game Over");
@@ -239,7 +244,7 @@ function gameOver() {
     var timerH = $("#timer");
     timerH.text("Game Over!");
     var questionsD = $("#question");
-    questionsD.html(`<p>The total correctly answered: ${correct}</p> <p>The total incorrectly answered: ${wrong}</p> <p>The total you ran out of time: ${endTime}</p><BR><BR><p>Click Next to Play Again!</p>`);
+    questionsD.html(`<p>The total correctly answered: ${correct}</p> <p>The total incorrectly answered: ${wrong}</p> <p>The total you ran out of time: ${endTime}</p><p>Click Next to Play Again!</p>`);
 
     $("#start").show();
     $("#start").text("Play Again?");
