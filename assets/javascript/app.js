@@ -157,7 +157,6 @@ function decrement() {
                 endTime++;
                 clean();
                 timedOut();
-                console.log("out of time!");
         }
     };
 
@@ -179,7 +178,6 @@ function timedOut() {
     questionsD.text(`The correct answer was ${questions[index].choices[questions[index].answer.indexOf(true)]}`);
 
     if (index === (questions.length - 1)) {
-        console.log("Game Over");
         gameOver();
     }
     index++;
@@ -203,7 +201,6 @@ function correctGuess() {
     questionsD.text("");
 
     if (index === (questions.length - 1)) {
-        console.log("Game Over");
         gameOver();
     }
     index++;
@@ -225,7 +222,6 @@ function wrongGuess() {
     questionsD.text(`The correct answer was ${questions[index].choices[questions[index].answer.indexOf(true)]}`);
 
     if (index === (questions.length - 1)) {
-        console.log("Game Over");
         gameOver();
     }
     index++;
@@ -282,23 +278,23 @@ function showQuestion() {
     }
     $(".pick-answer").one("click", function () {
 
-        console.log("click")
+        
         var guess = $(this).attr("value");
-        console.log(guess);
+        
 
         if (guess === "true") {
             stop();
             correct++;
             clean();
             correctGuess();
-            console.log("Correct");
+    
         }
         if (guess === "false") {
             stop();
             wrong++;
             clean();
             wrongGuess();
-            console.log("Wrong");
+            
         };
     });
 };
